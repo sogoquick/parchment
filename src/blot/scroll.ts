@@ -70,6 +70,7 @@ class ScrollBlot extends ContainerBlot {
     let mark = (blot: Blot | null, markParent: boolean = true) => {
       if (blot == null || blot === this) return;
       if (blot.domNode.parentNode == null) return;
+      if (blot.domNode[Registry.DATA_KEY] == null) return;
       // @ts-ignore
       if (blot.domNode[Registry.DATA_KEY].mutations == null) {
         // @ts-ignore
